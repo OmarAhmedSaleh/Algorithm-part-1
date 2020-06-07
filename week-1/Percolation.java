@@ -100,7 +100,7 @@ public class Percolation {
         checkIndex(row, col);
         int index = this.getIndexFromRowAndCol(row, col);
         int parent = UDS.find(index);
-        return this.connectedToTopRow[parent] || row == 1;
+        return this.connectedToTopRow[parent] || (row == 1 && this.isOpen(row, col));
     }
 
     // returns the number of open sites
